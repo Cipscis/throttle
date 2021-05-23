@@ -1,9 +1,9 @@
 {
-	"name": "base-package",
-	"version": "0.1.0",
-	"description": "This is my base project to use when creating new packages.",
+	"name": "throttle",
+	"version": "1.0.0",
+	"description": "Throttle functions so they can't be called faster than a given rate.",
 	"private": true,
-	"browser": "./main.js",
+	"browser": "./throttle.js",
 	"author": "Mark Hanna",
 	"license": "Hippocratic-2.1"
 }
