@@ -1,6 +1,6 @@
 {
 	"name": "throttle",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Throttle functions so they can't be called faster than a given rate.",
 	"private": true,
 	"browser": "./throttle.js",
@@ -21,7 +21,6 @@
 		"gulp": "^4.0.2",
 		"gulp-sass": "^4.1.0",
 		"webpack-stream": "^6.1.2",
-		"activate": "github:cipscis/activate#semver:1.0.2",
-		"throttle": "github:cipscis/throttle#semver:1.0.0"
+		"activate": "github:cipscis/activate#semver:1.0.2"
 	}
 }

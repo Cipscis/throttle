@@ -1,4 +1,4 @@
-import throttle from 'throttle';
+import throttle from '/throttle';
 import activate from 'activate';
 
 const increment = function (e) {
