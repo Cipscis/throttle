@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Throttle</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="/throttle/assets/css/main.css" />
+	<script type="module" src="/throttle/assets/js/dist/bundle.js"></script>
+</head>
+<body>
+	<main class="layout">
+		<section>
+			<div class="content">
+				<h1>Throttle</h1>
+
+				<p>Throttles a function so it can't be called more often than a given delay.</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="content">
+				<h2>Throttle</h2>
+
+				<code>throttle(fn, delay)</code>
+
+				<p>Creates a new version of the function <code>fn</code>, which will not execute more often than once every <code>delay</code> milliseconds regardless of how many times it is called.</p>
+
+				<h3>Arguments</h3>
+
+				<h4>fn</h4>
+
+				<p>A function to be throttled.</p>
+
+				<h4>delay</h4>
+
+				<p>The number of milliseconds for which the function should be unable to be called after each time it is executed..</p>
+
+				<h3>Examples</h3>
+
+				<p>This button can only be activated every 200 ms:</p>
+
+				<button class="button activate-button js-throttle-fast" data-activate-count="0">200 ms delay</button>
+
+				<p>This button can only be activated once every second:</p>
+
+				<button class="button activate-button js-throttle-slow" data-activate-count="0">1000 ms delay</button>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
