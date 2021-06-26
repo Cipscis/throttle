@@ -1,5 +1,4 @@
-import throttle from '/throttle';
-import activate from 'activate';
+import throttle from '/throttle.js';
 
 const increment = function (e) {
 	e.preventDefault();
@@ -12,5 +11,5 @@ const increment = function (e) {
 	el.setAttribute('data-activate-count', activateNum);
 };
 
-activate('.js-throttle-fast', throttle(increment, 200));
-activate('.js-throttle-slow', throttle(increment, 1000));
+document.querySelectorAll('.js-throttle-fast').forEach(($el) => $el.addEventListener('click', throttle(increment, 200)));
+document.querySelectorAll('.js-throttle-slow').forEach(($el) => $el.addEventListener('click', throttle(increment, 1000)));

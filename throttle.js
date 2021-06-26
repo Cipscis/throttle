@@ -8,11 +8,12 @@ const throttle = function (fn, delay) {
 		if (!timeout) {
 			fn.apply(this, arguments);
 
-			timeout = window.setTimeout(function () {
+			timeout = setTimeout(() => {
 				timeout = undefined;
 			}, delay);
 		}
 	};
 };
 
+export { throttle };
 export default throttle;
