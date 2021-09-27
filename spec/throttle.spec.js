@@ -1,4 +1,4 @@
-import { throttle } from '../throttle.js';
+import { throttle } from '../dist/throttle.js';
 
 describe('throttle', () => {
 	let spy;
@@ -115,7 +115,7 @@ describe('throttle', () => {
 	});
 
 	// Use function instead of array notation so 'arguments' exists
-	it(`doesn't override 'arguments' when used with arrow notation`, function ()  {
+	it(`doesn't override 'arguments' when used with arrow notation`, function () {
 		let withArgs;
 
 		const fn = function () {
@@ -139,5 +139,37 @@ describe('throttle', () => {
 		throttledArrFn(1, 2, 3, 4);
 		jasmine.clock().tick(100);
 		expect(withArgs).not.toEqual([1, 2, 3, 4]);
+	});
+
+	it(`returns the value returned by the initial function, if it's executed`, function () {
+		const fn = function () {
+			return true;
+		};
+
+		const throttledFn = throttle(fn, 100);
+
+		const returnVal = throttledFn();
+
+		expect(returnVal).toBe(true);
+	});
+
+	it(`returns undefined if the function was called during its cooldown period`, function () {
+		const fn = function () {
+			return true;
+		};
+
+		const throttledFn = throttle(fn, 100);
+
+		throttledFn();
+
+		const returnVal = throttledFn();
+
+		expect(returnVal).toBe(undefined);
+
+		jasmine.clock().tick(100);
+
+		const returnVal2 = throttledFn();
+
+		expect(returnVal2).toBe(true);
 	});
 });
