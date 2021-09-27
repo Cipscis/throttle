@@ -1,0 +1,2 @@
+(()=>{"use strict";const t=function(t,e){let n;return function(...c){if(!n){const r=t.apply(this,c);return n=setTimeout((()=>{n=void 0}),e),r}}},e=function(t){t.preventDefault();let e=t.target;const n=e.getAttribute("data-activate-count");let c=n?parseInt(n,10):0;c+=1,e.setAttribute("data-activate-count",c.toString())},n=t(e,200),c=t(e,1e3);document.querySelectorAll(".js-throttle-fast").forEach((t=>t.addEventListener("click",n))),document.querySelectorAll(".js-throttle-slow").forEach((t=>t.addEventListener("click",c)))})();
+//# sourceMappingURL=docs-script.bundle.js.map
